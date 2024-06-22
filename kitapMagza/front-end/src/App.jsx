@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useReducer, useState } from 'react'
 import './App.css'
+import Main from './components/Main'
+import { BooksContext, ThemeContext } from './content'
+import { cartReducer, initialState } from './reducers/CartReducers'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [darkMode , setDarkMode] = useState(true)
+  const [state,dispatch] = useReducer(cartReducer,initialState)
   return (
-    <>
-     <h1>Kitap Mağzası</h1>
-    </>
+    <ThemeContext.Provider value={{darkMode,setDarkMode}}>
+     <BooksContext.Provider value={{state,dispatch}}>
+          <Main/>
+     </BooksContext.Provider>
+     
+    </ThemeContext.Provider>
   )
 }
 
