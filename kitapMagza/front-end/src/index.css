@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark{
+    @apply bg-slate-900 text-white;
+}
+
+.modal-text{
+    color: black !important;
+}
+
+.active{
+    background-color: rgb(153, 216, 58);
+    color: white;
+}
