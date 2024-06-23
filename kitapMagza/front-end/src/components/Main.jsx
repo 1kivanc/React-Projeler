@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { Outlet } from "react-router-dom"
 import { ThemeContext } from "../content"
 import Header from "./Header";
+import SideBar from "./SideBar";
 
 const Main = () => {
     const {darkMode } = useContext(ThemeContext);
@@ -10,7 +11,7 @@ const Main = () => {
     <Header/>
     <main>
         <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
-            <div>Yan Panel</div>
+            <SideBar/>
             <div className="min-h-screen">
             <Outlet/>
             </div>
