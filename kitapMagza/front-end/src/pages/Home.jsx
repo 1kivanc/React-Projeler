@@ -1,8 +1,11 @@
+import BookList from "./books/BookList"
 
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <BookList />
+    </div>
   )
 }
 
